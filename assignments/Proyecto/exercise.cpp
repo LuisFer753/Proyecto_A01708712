@@ -1,4 +1,3 @@
-#include "Personaje.hpp"
 #include "Personaje.cpp"
 #include <iostream>
 using namespace std;

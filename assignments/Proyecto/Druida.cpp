@@ -33,6 +33,7 @@ void Druida::recibeAtaque(int dano){
     }
     set_salud(get_salud()-dano);
     if (get_salud()<0) set_salud(0);
+    estaVivo();
 }
 
 void Druida::atacar(Personaje &objetivo){
@@ -59,4 +60,17 @@ void Druida::atacar(Personaje &objetivo){
 void Druida::imprimir(){
     cout<<"Druida\nnivel: "<<get_nivel()<<"\nsalud: "<<get_salud()<<"/"<<get_maxvida()<<"\nataque: "<<get_ataque()<<"\nEspecie: "<<especie<<endl;
     imprimeBarra();
+}
+
+bool Druida::estaVivo(){
+    if (get_salud()>0){
+        return true;
+    }else if (get_salud()<=0 && especie!="humano"){
+        set_salud(1);
+        cout<<"El druida se ha levantado gracias a su instinto animal"<<endl;
+        return true;
+    }else{
+        cout<<"El druida ha caído en combate"<<endl;
+        return false;
+    }
 }

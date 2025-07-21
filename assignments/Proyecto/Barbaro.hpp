@@ -21,6 +21,7 @@ class Barbaro: public Personaje{
 
         void recibeAtaque(int);
         void imprimir();
+        bool estaVivo();
 };
 
 

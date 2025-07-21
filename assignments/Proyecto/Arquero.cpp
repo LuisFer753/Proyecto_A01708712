@@ -7,13 +7,11 @@
 
 using namespace std;
 
-Arquero::Arquero(){
-    Personaje();
+Arquero::Arquero(): Personaje(){
     presicion=25;
 }
 
-Arquero::Arquero(int mv, int sal, int atq, int nvl, int prec){
-    Personaje(mv, sal, atq, nvl);
+Arquero::Arquero(int mv, int sal, int atq, int nvl, int prec): Personaje(mv, sal, atq, nvl){
     presicion=prec;
 }
 
@@ -46,7 +44,22 @@ void Arquero::atacar(Personaje &objetivo){
     cout<< dano << " de daño inflinjido"<<endl;
 }
 
+void Personaje::recibeAtaque(int dano){
+    salud=salud-dano;
+    if (salud<0) salud=0;
+    estaVivo();
+}
+
 void Arquero::imprimir(){
     cout<<"Arquero\nnivel: "<<get_nivel()<<"\nsalud: "<<get_salud()<<"/"<<get_maxvida()<<"\nataque: "<<get_ataque()<<"\nPresición: "<<presicion<<endl;
     imprimeBarra();
+}
+
+bool Arquero::estaVivo(){
+    if (get_salud()>0){
+        return true;
+    }else{
+        cout<<"El arquero ha caído en combate"<<endl;
+        return false;
+    }
 }

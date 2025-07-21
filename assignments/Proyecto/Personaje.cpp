@@ -10,11 +10,11 @@
 using namespace std;
 
 
-int Personaje::porcentajeSalud(){
+int Personaje::porcentajeSalud() const{
     return salud*100/maxvida;
 }
 
-void Personaje::imprimeBarra(){
+void Personaje::imprimeBarra() const{
     int vida=porcentajeSalud();
     int puntos=vida*20/100;
     for(int i=0; i<puntos; i++) cout<<'-';
@@ -41,7 +41,15 @@ void Personaje::atacar(Personaje &objetivo){
     cout<< dano << " de daño inflinjido"<<endl;
 }
 
-void Personaje::imprimir(){
+void Personaje::imprimir() const{
     cout<<"Personaje\nnivel: "<<nivel<<"\nsalud: "<<salud<<"/"<<maxvida<<"\nataque: "<<ataque<<endl;
     imprimeBarra();
+}
+
+bool Personaje::estaVivo() const{
+    if (salud>0){
+        return true;
+    }else{
+        return false;
+    }
 }

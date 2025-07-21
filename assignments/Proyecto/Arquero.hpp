@@ -1,7 +1,7 @@
 #ifndef ARQUERO_H
 #define ARQUERO_H
 
-#include "Personaje.hpp"
+#include "Personaje.cpp"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -20,7 +20,9 @@ class Arquero: public Personaje{
         void set_presicion(int);
 
         void atacar(Personaje &objetivo);
+        void recibeAtaque(int);
         void imprimir();
+        bool estaVivo();
 };
 
 

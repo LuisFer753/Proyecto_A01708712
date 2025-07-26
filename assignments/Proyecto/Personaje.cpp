@@ -41,15 +41,7 @@ void Personaje::atacar(Personaje &objetivo){
     cout<< dano << " de daño inflinjido"<<endl;
 }
 
-void Personaje::imprimir() const{
-    cout<<"Personaje\nnivel: "<<nivel<<"\nsalud: "<<salud<<"/"<<maxvida<<"\nataque: "<<ataque<<endl;
-    imprimeBarra();
+bool Personaje::estaVivo(){
+    return salud>0;
 }
 
-bool Personaje::estaVivo() const{
-    if (salud>0){
-        return true;
-    }else{
-        return false;
-    }
-}

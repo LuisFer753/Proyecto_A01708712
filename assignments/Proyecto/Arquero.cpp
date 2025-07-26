@@ -44,13 +44,13 @@ void Arquero::atacar(Personaje &objetivo){
     cout<< dano << " de daño inflinjido"<<endl;
 }
 
-void Personaje::recibeAtaque(int dano){
-    salud=salud-dano;
-    if (salud<0) salud=0;
+void Arquero::recibeAtaque(int dano){
+    set_salud(get_salud()-dano);
+    if (get_salud()<0) set_salud(0);
     estaVivo();
 }
 
-void Arquero::imprimir(){
+void Arquero::imprimir() const{
     cout<<"Arquero\nnivel: "<<get_nivel()<<"\nsalud: "<<get_salud()<<"/"<<get_maxvida()<<"\nataque: "<<get_ataque()<<"\nPresición: "<<presicion<<endl;
     imprimeBarra();
 }

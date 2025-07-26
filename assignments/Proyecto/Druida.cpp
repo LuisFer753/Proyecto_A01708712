@@ -7,13 +7,11 @@
 
 using namespace std;
 
-Druida::Druida(){
-    Personaje();
-    especie='humano'; //puede ser un humano, un oso o una pantera
+Druida::Druida(): Personaje(){
+    especie="humano"; //puede ser un humano, un oso o una pantera
 }
 
-Druida::Druida(int mv, int sal, int atq, int nvl, string esp){
-    Personaje(mv, sal, atq, nvl);
+Druida::Druida(int mv, int sal, int atq, int nvl, string esp): Personaje(mv, sal, atq, nvl){
     especie=esp;
 }
 
@@ -57,7 +55,7 @@ void Druida::atacar(Personaje &objetivo){
     cout<< dano << " de daño inflinjido"<<endl;
 }
 
-void Druida::imprimir(){
+void Druida::imprimir() const{
     cout<<"Druida\nnivel: "<<get_nivel()<<"\nsalud: "<<get_salud()<<"/"<<get_maxvida()<<"\nataque: "<<get_ataque()<<"\nEspecie: "<<especie<<endl;
     imprimeBarra();
 }

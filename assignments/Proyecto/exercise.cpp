@@ -1,7 +1,7 @@
-#include "Personaje.cpp"
-#include "Arquero.cpp"
-#include "Barbaro.cpp"
-#include "Druida.cpp"
+#include "Personaje.hpp"
+#include "Arquero.hpp"
+#include "Barbaro.hpp"
+#include "Druida.hpp"
 #include <iostream>
 using namespace std;
 

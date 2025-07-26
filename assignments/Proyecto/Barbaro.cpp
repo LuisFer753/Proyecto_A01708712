@@ -31,7 +31,7 @@ void Barbaro::recibeAtaque(int dano){
     estaVivo();
 }
 
-void Barbaro::imprimir(){
+void Barbaro::imprimir() const{
     cout<<"Barbaro\nnivel: "<<get_nivel()<<"\nsalud: "<<get_salud()<<"/"<<get_maxvida()<<"\nataque: "<<get_ataque()<<"\nRabia: "<<rabia<<endl;
     imprimeBarra();
 }

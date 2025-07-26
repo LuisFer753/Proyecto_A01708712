@@ -21,7 +21,7 @@ class Druida: public Personaje{
 
         void recibeAtaque(int);
         void atacar(Personaje &objetivo);
-        void imprimir();
+        void imprimir() const override;
         bool estaVivo();
 };
 

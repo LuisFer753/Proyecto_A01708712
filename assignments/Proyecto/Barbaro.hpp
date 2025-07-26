@@ -20,7 +20,7 @@ class Barbaro: public Personaje{
         void set_rabia(int);
 
         void recibeAtaque(int);
-        void imprimir();
+        void imprimir() const override;
         bool estaVivo();
 };
 

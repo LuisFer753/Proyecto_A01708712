@@ -34,7 +34,7 @@ void Personaje::atacar(Personaje &objetivo){
     int dano=0;
     if (objetivo.get_nivel()>nivel){
         dano=(rand() % (ataque/2))+1; // Entre 1 y ataque/2
-    } else {
+    }else{
         dano=(rand() % (ataque-(ataque/2)+1))+(ataque/2); // Entre ataque/2 y ataque
     }
     objetivo.recibeAtaque(dano);
@@ -43,5 +43,9 @@ void Personaje::atacar(Personaje &objetivo){
 
 bool Personaje::estaVivo(){
     return salud>0;
+}
+
+void Personaje::operator>(Personaje &objetivo){
+    atacar(objetivo);
 }
 

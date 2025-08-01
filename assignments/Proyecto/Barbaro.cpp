@@ -48,4 +48,5 @@ bool Barbaro::estaVivo(){
         cout<<"El barbaro ha caído en combate"<<endl;
         return false;
     }
+    return false;
 }

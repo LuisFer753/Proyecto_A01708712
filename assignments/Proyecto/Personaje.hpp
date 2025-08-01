@@ -36,6 +36,7 @@ class Personaje{
         virtual void atacar(Personaje &objetivo); //este método calcula los puntos con que dañarás al objetivo de la siguiente manera: Si el objetivo tiene un nivel más alto que esta unidad, sólo se podrá atacar con un número aleatorio entre 1 y la mitad de los puntos de ataque. Si el objetivo es de nivel más bajo o igual, se ataca con un número aleatorio entre la mitad de los puntos de ataque y el total de los puntos de ataque. Este método debe también llamar al método recibeAtaque del objetivo para que se le descuente los puntos de salud al objetivo
         virtual void imprimir() const=0; //despliega en pantalla características del personaje y su barra de vida
         virtual bool estaVivo();
+        void operator>(Personaje &objetivo);
 };
 
 #endif

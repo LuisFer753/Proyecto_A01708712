@@ -65,6 +65,7 @@ bool Druida::estaVivo(){
         return true;
     }else if (get_salud()<=0 && especie!="humano"){
         set_salud(1);
+        set_especie("humano");
         cout<<"El druida se ha levantado gracias a su instinto animal"<<endl;
         return true;
     }else{
